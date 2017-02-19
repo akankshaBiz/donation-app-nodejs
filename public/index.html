@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Donation</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.3/angular-material.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+	<link rel="stylesheet" href="stylesheets/style.css">
+	<link rel="stylesheet" href="stylesheets/bootstrap-social.css">
+</head>
+<body ng-app='donationApp'>
+	<div ng-controller='homeCtrl'>
+		<div class="container">
+			<div class="row">
+				<h3 class="text-center">Donation App</h3>
+				<div class="main-container col-md-12 col-md-offset-2">
+					<div ng-if="donation.save" class="col-md-8 dialog-box">{{donation.message}}</div>
+					<uib-progressbar max="donation.max" value="donation.totalDonation" type='success'><span style="color:white; white-space:nowrap;">{{dynamic}} {{max}}</span></uib-progressbar>
+					<div class="col-md-10 text-center some-padding">
+						You have only 3 days left to fund the project.
+						</br>
+						Join other {{donation.members}} doners who have supported the project.
+					</div>
+					<div class="col-md-4 input-group some-padding">
+						<span class="input-group-addon" id="basic-addon1">$</span>
+						<input type="text" ng-model="donation.amount"/>
+					</div>
+					<div class="col-md-4 some-padding">
+						<button class="btn btn-success" ng-click='acceptDonation()'>Give Now</button>
+					</div>
+				
+					<div class="row ">
+						<div class="col-sm-4"><button class="btn btn-info" ng-click="saveForLater()">Save for later</button></div>
+						<div class="col-sm-5">
+							<button class="btn btn-info" ng-click="tellFrndz()">Tell your friends</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.3/angular-material.min.js"></script>
+	<script src="https://code.angularjs.org/1.6.2/angular-touch.min.js"></script>
+	<script src="https://code.angularjs.org/1.6.2/angular-animate.min.js"></script>
+	<script src="javascripts/angular-cookies.js"></script>
+	<script src="javascripts/angular-oauth2.js"></script>
+	<script src="javascripts/satellizer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+	<script src="javascripts/angularApp.js"></script>
+</body>
+</html>
